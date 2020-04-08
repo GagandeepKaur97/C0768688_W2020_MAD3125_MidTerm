@@ -119,10 +119,11 @@
                         tools:layout_editor_absoluteY="80dp">
 
 
-                    <com.google.android.material.textfield.TextInputEditText
+                    <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/age"
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
+                        android:textSize="20dp"
                         android:hint="AGE"/>
                     </com.google.android.material.textfield.TextInputLayout>
 
