@@ -30,6 +30,7 @@ public class person_entryscreen extends AppCompatActivity {
         setContentView(R.layout.activity_person_entryscreen);
         firstname=findViewById(R.id.first_name);
         lastname=findViewById(R.id.last_name);
+
        txtDate = findViewById(R.id.txtDate);
         Register = findViewById(R.id.register);
         Clear = findViewById(R.id.btnClear);
