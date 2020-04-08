@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.icu.util.Calendar;
 import android.os.Build;
 import android.os.Bundle;
@@ -38,6 +40,7 @@ public class person_entryscreen extends AppCompatActivity {
         firstname=findViewById(R.id.first_name);
         lastname=findViewById(R.id.last_name);
 taxdate =findViewById(R.id.taxdate);
+Age=findViewById(R.id.age);
        txtDate = findViewById(R.id.txtDate);
         Register = findViewById(R.id.register);
         Clear = findViewById(R.id.btnClear);
@@ -45,7 +48,7 @@ taxdate =findViewById(R.id.taxdate);
     Calendar calendar = Calendar.getInstance();
     SimpleDateFormat simpledateformat = new SimpleDateFormat(" EEEE ,dd-mm-yyyy hh:mm:ss a");
     String dateTime = simpledateformat.format(calendar.getTime());
-     taxdate.setText(dateTime);
+     taxdate.setText("Tax Filing Date: "+dateTime);
 
     final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
 
@@ -60,6 +63,21 @@ taxdate =findViewById(R.id.taxdate);
             SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
 
             txtDate.setText(sdf.format(myCalendar.getTime()));
+            if(calculateAge(myCalendar.getTimeInMillis()) > 18 )
+            {
+                Age.setText("Age: " + Integer.toString(calculateAge(myCalendar.getTimeInMillis())));
+                Age.setTextColor(Color.BLACK);
+                Age.setTypeface(null, Typeface.NORMAL);
+
+
+            }else {
+                Age.setText(" Not eligible to file tax for  this  year!");
+                Age.setTextColor(Color.RED);
+                Age.setTypeface(null, Typeface.BOLD);
+
+
+            }
+
 
         }
 
@@ -76,6 +94,7 @@ taxdate =findViewById(R.id.taxdate);
         }
 
     });
+
         Register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -95,4 +114,15 @@ taxdate =findViewById(R.id.taxdate);
             }
         });
     }
-}
+
+
+        int calculateAge(long date){
+            java.util.Calendar dob = java.util.Calendar.getInstance();
+            dob.setTimeInMillis(date);
+            java.util.Calendar today = java.util.Calendar.getInstance();
+            int age = today.get(java.util.Calendar.YEAR) - dob.get(java.util.Calendar.YEAR);
+            if(today.get(java.util.Calendar.DAY_OF_MONTH) < dob.get(java.util.Calendar.DAY_OF_MONTH)){
+                age--;
+            }
+            return age;}
+    };

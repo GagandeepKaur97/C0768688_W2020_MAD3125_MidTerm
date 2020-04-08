@@ -97,12 +97,13 @@
                         tools:layout_editor_absoluteY="80dp">
 
 
-                    <com.google.android.material.textfield.TextInputEditText
+                    <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/txtDate"
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
-                        android:hint="dd-mm-yy" >
-                    </com.google.android.material.textfield.TextInputEditText>
+                        android:hint=" Click To Enter BirthDate"
+                        android:textAlignment="center">
+                    </com.google.android.material.textview.MaterialTextView>
 
                     </com.google.android.material.textfield.TextInputLayout>
                 </TableRow>
@@ -175,12 +176,13 @@
                         tools:layout_editor_absoluteY="80dp">
 
 
-                    <com.google.android.material.textfield.TextInputEditText
+                    <com.google.android.material.textview.MaterialTextView
 
                         android:id="@+id/taxdate"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:hint="Tax filing date"/>
+                        android:hint="Tax filing date"
+                        android:textAlignment="center"/>
                     </com.google.android.material.textfield.TextInputLayout>
 
                 </TableRow>
