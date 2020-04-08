@@ -6,4 +6,201 @@
     android:layout_height="match_parent"
     tools:context=".person_entryscreen">
 
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <ScrollView
+            android:id="@+id/scrollview"
+            android:layout_width="409dp"
+            android:layout_height="729dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="1dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:padding="10dp"
+            tools:context= ".Tax register">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Tax filing"
+                    android:textSize="40dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"/>
+
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="First Name"/>
+                <EditText
+                    android:id="@+id/first_name"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:hint="first name"
+                    android:layout_weight="1"/>
+
+                <TableRow
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text=" Last Name"/>
+                    <EditText
+                        android:id="@+id/last_name"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:hint="last name"
+                        android:layout_weight="1"/>
+                </TableRow>
+                <TableRow
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text=" Birth date"/>
+
+                    <EditText
+                        android:id="@+id/txtDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:hint="dd-mm-yy" />
+                </TableRow>
+                <TableRow
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:id="@+id/age"
+                        android:layout_height="wrap_content"
+                        android:layout_width="30dp"
+
+                        android:hint="AGE"/>
+                    <EditText
+                        android:id="@+id/AGE"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:hint="AGE"
+                        android:layout_weight="1"/>
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="Gender"/>
+                    <Spinner
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:id="@+id/gender"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:entries="@array/gender"/>
+                </TableRow>
+                <TableRow
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="sin number"/>
+                    <EditText
+                        android:id="@+id/sinNumber"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:hint="Sin Number"
+                        android:layout_weight="1"/>
+
+                </TableRow>
+                <TableRow
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/taxdate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="Tax filing date"/>
+                    <EditText
+                        android:id="@+id/currentdate"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:hint="currentdate"
+                        android:layout_weight="1"/>
+
+                </TableRow>
+                <TableRow
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:id="@+id/Grossincome"
+                        android:layout_height="wrap_content"
+                        android:layout_width="30dp"
+
+                        android:hint="Gross income "/>
+                    <EditText
+                        android:id="@+id/Gross_income"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:hint="Gross income"
+                        android:layout_weight="1"/>
+
+
+                </TableRow>
+
+
+
+                <TableRow
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="RRSP Contributed"/>
+                    <EditText
+                        android:id="@+id/RRSP"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:hint="RRSP"
+                        android:layout_weight="1"/>
+
+                </TableRow>
+
+                <Button
+
+                    android:id="@+id/register"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:text="REGISTER"
+                    android:layout_marginTop="50dp"
+                    android:gravity="center"/>
+                <Button
+                    android:id="@+id/btnClear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:gravity="center"
+                    android:text="Clear" />
+
+            </TableLayout>
+        </ScrollView>
+    </androidx.core.widget.NestedScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
