@@ -21,13 +21,14 @@ public class person_entryscreen extends AppCompatActivity {
 
     private TextView firstname;
     private TextView lastname;
-    private DatePicker  BirthDate;
-private TextView Age;
-private TextView gender;
-private TextView sinnumber;
-private TextView taxdate;
-private TextView Grosspay;
-    private TextView txtDate;
+    private TextView  txtDate;
+    private TextView Age;
+    private TextView gender;
+    private TextView sinnumber;
+    private TextView taxdate;
+    private TextView Grosspay;
+    private TextView RRSP;
+
     private Button Register;
     private Button Clear;
     @Override
@@ -36,12 +37,15 @@ private TextView Grosspay;
         setContentView(R.layout.activity_person_entryscreen);
         firstname=findViewById(R.id.first_name);
         lastname=findViewById(R.id.last_name);
-
+taxdate =findViewById(R.id.taxdate);
        txtDate = findViewById(R.id.txtDate);
         Register = findViewById(R.id.register);
         Clear = findViewById(R.id.btnClear);
     final Calendar myCalendar = Calendar.getInstance();
-
+    Calendar calendar = Calendar.getInstance();
+    SimpleDateFormat simpledateformat = new SimpleDateFormat(" EEEE ,dd-mm-yyyy hh:mm:ss a");
+    String dateTime = simpledateformat.format(calendar.getTime());
+     taxdate.setText(dateTime);
 
     final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
 
@@ -52,7 +56,7 @@ private TextView Grosspay;
             myCalendar.set(Calendar.YEAR, year);
             myCalendar.set(Calendar.MONTH, monthOfYear);
             myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-            String myFormat = "MM/dd/yy"; //In which you need put here
+            String myFormat = "MM-dd-yy"; //In which you need put here
             SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
 
             txtDate.setText(sdf.format(myCalendar.getTime()));
