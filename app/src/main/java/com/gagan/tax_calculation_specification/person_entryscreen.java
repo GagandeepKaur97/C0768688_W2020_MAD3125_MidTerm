@@ -21,6 +21,12 @@ public class person_entryscreen extends AppCompatActivity {
 
     private TextView firstname;
     private TextView lastname;
+    private DatePicker  BirthDate;
+private TextView Age;
+private TextView gender;
+private TextView sinnumber;
+private TextView taxdate;
+private TextView Grosspay;
     private TextView txtDate;
     private Button Register;
     private Button Clear;
