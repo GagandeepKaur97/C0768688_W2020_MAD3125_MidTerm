@@ -18,6 +18,9 @@ import java.util.Locale;
 
 @RequiresApi(api = Build.VERSION_CODES.N)
 public class person_entryscreen extends AppCompatActivity {
+
+    private TextView firstname;
+    private TextView lastname;
     private TextView txtDate;
     private Button Register;
     private Button Clear;
@@ -25,6 +28,8 @@ public class person_entryscreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_person_entryscreen);
+        firstname=findViewById(R.id.first_name);
+        lastname=findViewById(R.id.last_name);
        txtDate = findViewById(R.id.txtDate);
         Register = findViewById(R.id.register);
         Clear = findViewById(R.id.btnClear);
@@ -65,6 +70,17 @@ public class person_entryscreen extends AppCompatActivity {
             public void onClick(View v) {
                 Intent mintent = new Intent(person_entryscreen.this, Displaying_data.class);
                 startActivity(mintent);
+            }
+        });
+        Clear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                firstname.setText("");
+                lastname.setText("");
+
+
+
             }
         });
     }
