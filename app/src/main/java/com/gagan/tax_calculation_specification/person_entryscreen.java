@@ -4,10 +4,12 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.icu.util.Calendar;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
 
@@ -17,13 +19,15 @@ import java.util.Locale;
 @RequiresApi(api = Build.VERSION_CODES.N)
 public class person_entryscreen extends AppCompatActivity {
     private TextView txtDate;
-
+    private Button Register;
+    private Button Clear;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_person_entryscreen);
        txtDate = findViewById(R.id.txtDate);
-
+        Register = findViewById(R.id.register);
+        Clear = findViewById(R.id.btnClear);
     final Calendar myCalendar = Calendar.getInstance();
 
 
@@ -56,4 +60,12 @@ public class person_entryscreen extends AppCompatActivity {
         }
 
     });
-}}
+        Register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent mintent = new Intent(person_entryscreen.this, Displaying_data.class);
+                startActivity(mintent);
+            }
+        });
+    }
+}
