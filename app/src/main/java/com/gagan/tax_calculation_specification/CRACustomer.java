@@ -54,8 +54,18 @@ public class CRACustomer  implements Parcelable {
         gender =in.createStringArrayList();
         Sinnumber = in.readInt();
         taxdate = in.readString();
+        if (in.readByte() == 0)
+        {
+            Grosssincome = null;
+        } else {
         Grosssincome = in.readDouble();
+        }
+        if (in.readByte() == 0) {
+            RRSP = null;
+        } else {
         RRSP = in.readDouble();
+        }
+
         federal=in.readDouble();
         provincialtax=in.readDouble();
         CPP=in.readDouble();
