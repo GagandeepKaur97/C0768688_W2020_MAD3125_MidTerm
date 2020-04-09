@@ -10,6 +10,7 @@ import android.graphics.Typeface;
 import android.icu.util.Calendar;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.GestureDetector;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -108,20 +109,22 @@ public class person_entryscreen extends AppCompatActivity {
         Register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String value1 = Grosspay.getText().toString();
-                Double GrossValue = Double.parseDouble(value1);
-                String value2 = RRSP.getText().toString();
-                Double RRSPvalue = Double.parseDouble(value2);
+
 
 
                 if ((isValidSin(sinnumber.getText().toString())) == false) {
                     sinnumber.setError("not valid");
 
                 } else {
+                    String value1 = Grosspay.getText().toString();
+                    Double GrossValue = Double.parseDouble(value1);
+                    String value2 = RRSP.getText().toString();
+                    Double RRSPvalue = Double.parseDouble(value2);
+
                     sinnumber.setText(sinnumber.getText().toString());
                     Intent mintent = new Intent(person_entryscreen.this, Displaying_data.class);
-                   // CRACustomer C1 = new CRACustomer(firstname.getText().toString(),lastname.getText().toString(),txtDate.getText().toString(),Age.getText().toString(),gender.getSelectedItem().toString(),sinnumber.getText().toString(),taxdate.getText().toString(),GrossValue,RRSPvalue);
-                   // mintent.putExtra("object",C1);
+                    CRACustomer C1 = new CRACustomer(taxdate.getText().toString(),sinnumber.getText().toString(),firstname.getText().toString(), lastname.getText().toString(), txtDate.getText().toString(), Age.getText().toString(), gender.getSelectedItem().toString(), GrossValue, RRSPvalue);
+                    mintent.putExtra("object",C1);
                     startActivity(mintent);
                 }
             }

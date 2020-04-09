@@ -7,73 +7,79 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class CRACustomer  implements Parcelable {
-    private String firstname;
-    private String lastname;
+public class CRACustomer implements Parcelable {
+
+    private String currentDate;
+    private String sinNo;
+    private String firstName;
+    private String lastName;
     private String Birthdate;
-    private int age;
-    private ArrayList<String> gender;
-    private int Sinnumber;
-    private String taxdate;
-    private Double Grosssincome;
+    private String age;
+    private String Gender;
+    private Double GrossIncome;
     private Double RRSP;
-    private Double federal;
-    private Double provincialtax;
-    private Double CPP;
-    private Double EI;
-    private Double CFRRSP;
-    private Double Totaltaxincome;
-    private Double TotalTaxPayed;
-
-    public CRACustomer(String firstname, String lastname, String birthdate, int age, ArrayList<String> gender, int sinnumber, String taxdate, Double grosssincome, Double RRSP, Double federal,Double provincialtax, Double CPP, Double EI, Double CFRRSP, Double totaltaxincome, Double totalTaxPayed) {
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this. Birthdate = birthdate;
-        this.age = age;
-        this.gender = gender;
-        this. Sinnumber = sinnumber;
-        this.taxdate = taxdate;
-        this.Grosssincome = grosssincome;
-        this.RRSP = RRSP;
-        this.federal = federal;
-        this.provincialtax = provincialtax;
-        this.CPP = CPP;
-        this.EI = EI;
-        this.CFRRSP = CFRRSP;
-        this.Totaltaxincome = totaltaxincome;
-       this. TotalTaxPayed = totalTaxPayed;
-    }
-
-
 
     protected CRACustomer(Parcel in) {
-        firstname = in.readString();
-        lastname = in.readString();
-        Birthdate=in.readString();
-        age =in.readInt();
-        gender =in.createStringArrayList();
-        Sinnumber = in.readInt();
-        taxdate = in.readString();
-        if (in.readByte() == 0)
-        {
-            Grosssincome = null;
+        currentDate = in.readString();
+        sinNo = in.readString();
+        firstName = in.readString();
+        lastName = in.readString();
+        Birthdate = in.readString();
+        age = in.readString();
+        Gender = in.readString();
+        if (in.readByte() == 0) {
+            GrossIncome = null;
         } else {
-        Grosssincome = in.readDouble();
+            GrossIncome = in.readDouble();
         }
         if (in.readByte() == 0) {
             RRSP = null;
         } else {
-        RRSP = in.readDouble();
+            RRSP = in.readDouble();
         }
+    }
 
-        federal=in.readDouble();
-        provincialtax=in.readDouble();
-        CPP=in.readDouble();
-        EI=in.readDouble();
-        CFRRSP=in.readDouble();
-        Totaltaxincome=in.readDouble();
-        TotalTaxPayed=in.readDouble();
+    public CRACustomer() {
+    }
 
+    public CRACustomer(String currentDate, String sinNo, String firstName, String lastName, String birthdate, String age, String gender, Double grossIncome, Double RRSP) {
+        this.currentDate = currentDate;
+        this.sinNo = sinNo;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        Birthdate = birthdate;
+        this.age = age;
+        Gender = gender;
+        GrossIncome = grossIncome;
+        this.RRSP = RRSP;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(currentDate);
+        dest.writeString(sinNo);
+        dest.writeString(firstName);
+        dest.writeString(lastName);
+        dest.writeString(Birthdate);
+        dest.writeString(age);
+        dest.writeString(Gender);
+        if (GrossIncome == null) {
+            dest.writeByte((byte) 0);
+        } else {
+            dest.writeByte((byte) 1);
+            dest.writeDouble(GrossIncome);
+        }
+        if (RRSP == null) {
+            dest.writeByte((byte) 0);
+        } else {
+            dest.writeByte((byte) 1);
+            dest.writeDouble(RRSP);
+        }
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
     }
 
     public static final Creator<CRACustomer> CREATOR = new Creator<CRACustomer>() {
@@ -88,30 +94,36 @@ public class CRACustomer  implements Parcelable {
         }
     };
 
-    @Override
-    public int describeContents() {
-        return 0;
+    public String getCurrentDate() {
+        return currentDate;
     }
 
-
-
-
-
-
-    public String getFirstname() {
-        return firstname;
+    public void setCurrentDate(String currentDate) {
+        this.currentDate = currentDate;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public String getSinNo() {
+        return sinNo;
     }
 
-    public String getLastname() {
-        return lastname;
+    public void setSinNo(String sinNo) {
+        this.sinNo = sinNo;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getBirthdate() {
@@ -122,44 +134,28 @@ public class CRACustomer  implements Parcelable {
         Birthdate = birthdate;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 
-    public ArrayList<String> getGender() {
-        return gender;
+    public String getGender() {
+        return Gender;
     }
 
-    public void setGender(ArrayList<String> gender) {
-        this.gender = gender;
+    public void setGender(String gender) {
+        Gender = gender;
     }
 
-    public int getSinnumber() {
-        return Sinnumber;
+    public Double getGrossIncome() {
+        return GrossIncome;
     }
 
-    public void setSinnumber(int sinnumber) {
-        Sinnumber = sinnumber;
-    }
-
-    public String getTaxdate() {
-        return taxdate;
-    }
-
-    public void setTaxdate(String taxdate) {
-        this.taxdate = taxdate;
-    }
-
-    public Double getGrosssincome() {
-        return Grosssincome;
-    }
-
-    public void setGrosssincome(Double grosssincome) {
-        Grosssincome = grosssincome;
+    public void setGrossIncome(Double grossIncome) {
+        GrossIncome = grossIncome;
     }
 
     public Double getRRSP() {
@@ -170,86 +166,7 @@ public class CRACustomer  implements Parcelable {
         this.RRSP = RRSP;
     }
 
-    public Double getFederal() {
-        return federal;
-    }
-
-    public void setFederal(Double federal) {
-        this.federal = federal;
-    }
-
-    public Double getProvincialtax() {
-        return provincialtax;
-    }
-
-    public void setProvincialtax(Double provincialtax) {
-        this.provincialtax = provincialtax;
-    }
-
-    public Double getCPP() {
-        return CPP;
-    }
-
-    public void setCPP(Double CPP) {
-        this.CPP = CPP;
-    }
-
-    public Double getEI() {
-        return EI;
-    }
-
-    public void setEI(Double EI) {
-        this.EI = EI;
-    }
-
-    public Double getCFRRSP() {
-        return CFRRSP;
-    }
-
-    public void setCFRRSP(Double CFRRSP) {
-        this.CFRRSP = CFRRSP;
-    }
-
-    public Double getTotaltaxincome() {
-        return Totaltaxincome;
-    }
-
-    public void setTotaltaxincome(Double totaltaxincome) {
-        Totaltaxincome = totaltaxincome;
-    }
-
-    public Double getTotalTaxPayed() {
-        return TotalTaxPayed;
-    }
-
-    public void setTotalTaxPayed(Double totalTaxPayed) {
-        TotalTaxPayed = totalTaxPayed;
-    }
-
     public static Creator<CRACustomer> getCREATOR() {
         return CREATOR;
     }
-
-    @Override
-    public void writeToParcel(Parcel parcel, int flags) {
-        parcel.writeString(firstname);
-        parcel.writeString(lastname);
-
-        parcel.writeInt(age);
-        parcel.writeStringList(gender);
-        parcel.writeInt(Sinnumber);
-        if (Grosssincome == null) {
-            parcel.writeByte((byte) 0);
-        } else {
-            parcel.writeByte((byte) 1);
-            parcel.writeDouble(Grosssincome);
-        }
-        if (RRSP == null) {
-            parcel.writeByte((byte) 0);
-        } else {
-            parcel.writeByte((byte) 1);
-            parcel.writeDouble(RRSP);
-        }
-    }
-    }
-
+}
