@@ -223,5 +223,18 @@ public class CRACustomer  implements Parcelable {
         parcel.writeInt(age);
         parcel.writeStringList(gender);
         parcel.writeInt(Sinnumber);
+        if (Grosssincome == null) {
+            parcel.writeByte((byte) 0);
+        } else {
+            parcel.writeByte((byte) 1);
+            parcel.writeDouble(Grosssincome);
+        }
+        if (RRSP == null) {
+            parcel.writeByte((byte) 0);
+        } else {
+            parcel.writeByte((byte) 1);
+            parcel.writeDouble(RRSP);
+        }
     }
-}
+    }
+
