@@ -79,12 +79,14 @@ public class person_entryscreen extends AppCompatActivity {
                     Age.setText("Age: " + Integer.toString(calculateAge(myCalendar.getTimeInMillis())));
                     Age.setTextColor(Color.BLACK);
                     Age.setTypeface(null, Typeface.NORMAL);
+                    Register.setEnabled(true);
 
 
                 } else {
                     Age.setText(" Not eligible to file tax for  this  year!");
                     Age.setTextColor(Color.RED);
                     Age.setTypeface(null, Typeface.BOLD);
+                    Register.setEnabled(false);
 
 
                 }
