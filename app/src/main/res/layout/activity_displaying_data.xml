@@ -285,7 +285,7 @@
                         android:layout_weight="1"
                         android:gravity="left"
                         android:text="provincial tax"
-                        android:textSize="30dp" />
+                        android:textSize="20dp" />
 
                     <TextView
                         android:id="@+id/PT"
@@ -311,7 +311,7 @@
                         android:layout_weight="1"
                         android:gravity="left"
                         android:text="CPP"
-                        android:textSize="30dp" />
+                        android:textSize="20dp" />
 
                     <TextView
                         android:id="@+id/cp"
