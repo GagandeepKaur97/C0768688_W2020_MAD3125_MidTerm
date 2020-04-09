@@ -17,6 +17,8 @@ import android.widget.DatePicker;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.google.android.material.snackbar.Snackbar;
+
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 import java.util.regex.Matcher;
@@ -125,6 +127,14 @@ public class person_entryscreen extends AppCompatActivity {
                 }else if (lastname.getText().toString().matches("")){
                     lastname.setError("enter Last name!");
 
+                }else if (Age.getText().toString().matches("")) {
+                    Age.setError("enter Date of birth");
+
+                } else if (gender.getSelectedItem().toString().matches("Choose One Type")){
+
+                    Snackbar.make(findViewById(R.id.gender), R.string.G,
+                            Snackbar.LENGTH_SHORT)
+                            .show();
 
                 }else if (Grosspay.getText().toString().matches("")) {
 
