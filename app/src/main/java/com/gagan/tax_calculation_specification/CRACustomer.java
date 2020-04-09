@@ -10,23 +10,22 @@ import java.util.ArrayList;
 public class CRACustomer  implements Parcelable {
     private String firstname;
     private String lastname;
-
     private DatePicker Birthdate;
     private int age;
     private ArrayList<String> gender;
     private int Sinnumber;
     private TextView taxdate;
-    private Float Grosssincome;
-    private Float RRSP;
-    private float federal;
-    private float provincialtax;
-    private float CPP;
-    private float EI;
-    private float CFRRSP;
-    private float Totaltaxincome;
-    private float TotalTaxPayed;
+    private Double Grosssincome;
+    private Double RRSP;
+    private Double federal;
+    private Double provincialtax;
+    private Double CPP;
+    private Double EI;
+    private Double CFRRSP;
+    private Double Totaltaxincome;
+    private Double TotalTaxPayed;
 
-    public CRACustomer(String firstname, String lastname, DatePicker birthdate, int age, ArrayList<String> gender, int sinnumber, TextView taxdate, Float grosssincome, Float RRSP, float federal, float provincialtax, float CPP, float EI, float CFRRSP, float totaltaxincome, float totalTaxPayed) {
+    public CRACustomer(String firstname, String lastname, DatePicker birthdate, int age, ArrayList<String> gender, int sinnumber, TextView taxdate, Double grosssincome, Double RRSP, Double federal,Double provincialtax, Double CPP, Double EI, Double CFRRSP, Double totaltaxincome, Double totalTaxPayed) {
         this.firstname = firstname;
         this.lastname = lastname;
 
@@ -140,75 +139,75 @@ public class CRACustomer  implements Parcelable {
         this.taxdate = taxdate;
     }
 
-    public Float getGrosssincome() {
+    public Double getGrosssincome() {
         return Grosssincome;
     }
 
-    public void setGrosssincome(Float grosssincome) {
+    public void setGrosssincome(Double grosssincome) {
         Grosssincome = grosssincome;
     }
 
-    public Float getRRSP() {
+    public Double getRRSP() {
         return RRSP;
     }
 
-    public void setRRSP(Float RRSP) {
+    public void setRRSP(Double RRSP) {
         this.RRSP = RRSP;
     }
 
-    public float getFederal() {
+    public Double getFederal() {
         return federal;
     }
 
-    public void setFederal(float federal) {
+    public void setFederal(Double federal) {
         this.federal = federal;
     }
 
-    public float getProvincialtax() {
+    public Double getProvincialtax() {
         return provincialtax;
     }
 
-    public void setProvincialtax(float provincialtax) {
+    public void setProvincialtax(Double provincialtax) {
         this.provincialtax = provincialtax;
     }
 
-    public float getCPP() {
+    public Double getCPP() {
         return CPP;
     }
 
-    public void setCPP(float CPP) {
+    public void setCPP(Double CPP) {
         this.CPP = CPP;
     }
 
-    public float getEI() {
+    public Double getEI() {
         return EI;
     }
 
-    public void setEI(float EI) {
+    public void setEI(Double EI) {
         this.EI = EI;
     }
 
-    public float getCFRRSP() {
+    public Double getCFRRSP() {
         return CFRRSP;
     }
 
-    public void setCFRRSP(float CFRRSP) {
+    public void setCFRRSP(Double CFRRSP) {
         this.CFRRSP = CFRRSP;
     }
 
-    public float getTotaltaxincome() {
+    public Double getTotaltaxincome() {
         return Totaltaxincome;
     }
 
-    public void setTotaltaxincome(float totaltaxincome) {
+    public void setTotaltaxincome(Double totaltaxincome) {
         Totaltaxincome = totaltaxincome;
     }
 
-    public float getTotalTaxPayed() {
+    public Double getTotalTaxPayed() {
         return TotalTaxPayed;
     }
 
-    public void setTotalTaxPayed(float totalTaxPayed) {
+    public void setTotalTaxPayed(Double totalTaxPayed) {
         TotalTaxPayed = totalTaxPayed;
     }
 
