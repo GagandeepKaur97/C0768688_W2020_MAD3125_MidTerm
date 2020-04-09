@@ -114,6 +114,19 @@ public class person_entryscreen extends AppCompatActivity {
 
                 if ((isValidSin(sinnumber.getText().toString())) == false) {
                     sinnumber.setError("not valid");
+                }else if (firstname.getText().toString().matches("")){
+                    firstname.setError("enter First name!");
+
+                }else if (lastname.getText().toString().matches("")){
+                    lastname.setError("enter Last name!");
+
+                }else if (Grosspay.getText().toString().matches("")){
+                    Grosspay.setError("enter Last name!");
+
+                }else if (RRSP.getText().toString().matches("")){
+                    RRSP.setError("enter Last name!");
+
+
 
                 } else {
                     String value1 = Grosspay.getText().toString();
@@ -165,8 +178,7 @@ public class person_entryscreen extends AppCompatActivity {
             }
 
 
-//        });
-//    }
+
 
 
 }
