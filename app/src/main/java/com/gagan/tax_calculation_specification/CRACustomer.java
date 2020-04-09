@@ -64,11 +64,6 @@ public class CRACustomer  implements Parcelable {
         Totaltaxincome=in.readDouble();
         TotalTaxPayed=in.readDouble();
 
-
-
-
-
-
     }
 
     public static final Creator<CRACustomer> CREATOR = new Creator<CRACustomer>() {
