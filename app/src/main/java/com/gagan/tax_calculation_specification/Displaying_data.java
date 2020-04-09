@@ -78,44 +78,44 @@ public class Displaying_data extends AppCompatActivity {
 
         if( TOTALTAXINCOME >= 220000){
             Double pt = TOTALTAXINCOME*0.1316;
-            ProvincialTAX.setText(pt.toString());
+            ProvincialTAX.setText(String.format("%.2f",pt));
 
         }else if (( TOTALTAXINCOME >= 150000) &&( TOTALTAXINCOME <= 220000)){
             Double pt =  TOTALTAXINCOME*0.1216;
-            ProvincialTAX.setText(pt.toString());
+            ProvincialTAX.setText(String.format("%.2f",pt));
         }else if (( TOTALTAXINCOME >= 87813.01) &&( TOTALTAXINCOME <= 150000)){
             Double pt =  TOTALTAXINCOME*0.1116;
-            ProvincialTAX.setText(pt.toString());
+            ProvincialTAX.setText(String.format("%.2f",pt));
         }else if (( TOTALTAXINCOME >= 43906.01) &&( TOTALTAXINCOME <= 87813)){
             Double pt =  TOTALTAXINCOME*0.0915;
-            ProvincialTAX.setText(pt.toString());
+            ProvincialTAX.setText(String.format("%.2f",pt));
         }else if (( TOTALTAXINCOME >= 10582.01) &&( TOTALTAXINCOME <= 43906)){
             Double pt =  TOTALTAXINCOME*0.0505;
-            ProvincialTAX.setText(pt.toString());
+            ProvincialTAX.setText(String.format("%.2f",pt));
         }else if ( TOTALTAXINCOME <= 10582){
             Double pt =  TOTALTAXINCOME;
-            ProvincialTAX.setText(pt.toString());
+            ProvincialTAX.setText(String.format("%.2f",pt));
         }
 
 
         if( TOTALTAXINCOME >= 210371.01){
-            Double pt =  TOTALTAXINCOME*0.33;
-            federalTAX.setText(pt.toString());
+            Double ft =  TOTALTAXINCOME*0.33;
+            federalTAX.setText(String.format("%.2f",ft));
         }else if (( TOTALTAXINCOME >= 147667.01) &&( TOTALTAXINCOME <= 210371)){
-            Double pt =  TOTALTAXINCOME*0.29;
-            federalTAX.setText(pt.toString());
+            Double ft =  TOTALTAXINCOME*0.29;
+            federalTAX.setText(String.format("%.2f",ft));
         }else if (( TOTALTAXINCOME >= 95259.01) &&( TOTALTAXINCOME <= 147667)){
-            Double pt =  TOTALTAXINCOME*0.26;
-            federalTAX.setText(pt.toString());
+            Double ft =  TOTALTAXINCOME*0.26;
+            federalTAX.setText(String.format("%.2f",ft));
         }else if (( TOTALTAXINCOME >= 47630.01) &&( TOTALTAXINCOME <= 95259)){
-            Double pt =  TOTALTAXINCOME*0.2050;
-            federalTAX.setText(pt.toString());
+            Double ft =  TOTALTAXINCOME*0.2050;
+            federalTAX.setText(String.format("%.2f",ft));
         }else if (( TOTALTAXINCOME >= 12609.01) &&( TOTALTAXINCOME <= 47630)){
-            Double pt =  TOTALTAXINCOME*0.15;
-            federalTAX.setText(pt.toString());
+            Double ft =  TOTALTAXINCOME*0.15;
+            federalTAX.setText(String.format("%.2f",ft));
         }else if ( TOTALTAXINCOME <= 12069){
-            Double pt =  TOTALTAXINCOME;
-            federalTAX.setText(pt.toString());
+            Double ft =  TOTALTAXINCOME;
+            federalTAX.setText(String.format("%.2f",ft));
         }
 
         String value1= ProvincialTAX.getText().toString();

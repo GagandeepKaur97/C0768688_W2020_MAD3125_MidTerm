@@ -60,7 +60,7 @@ public class person_entryscreen extends AppCompatActivity {
         Calendar calendar = Calendar.getInstance();
         SimpleDateFormat simpledateformat = new SimpleDateFormat(" EEEE ,dd-mm-yyyy hh:mm:ss a");
         String dateTime = simpledateformat.format(calendar.getTime());
-        taxdate.setText("Date: " + dateTime);
+        taxdate.setText( dateTime);
         taxdate.setTextColor(Color.BLACK);
 
         final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
@@ -79,7 +79,7 @@ public class person_entryscreen extends AppCompatActivity {
                 txtDate.setTextColor(Color.BLACK);
                 txtDate.setTypeface(null,Typeface.BOLD);
                 if (calculateAge(myCalendar.getTimeInMillis()) > 18) {
-                    Age.setText("Age: " + Integer.toString(calculateAge(myCalendar.getTimeInMillis())));
+                    Age.setText( Integer.toString(calculateAge(myCalendar.getTimeInMillis())));
                     Age.setTextColor(Color.BLACK);
                     Age.setTypeface(null, Typeface.NORMAL);
                     Register.setEnabled(true);
