@@ -44,7 +44,7 @@
                     android:layout_marginRight="10dp">
 
                     <TextView
-                        android:id="@+id/firstnam"
+                        android:id="@+id/firstname"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="5dp"
@@ -54,7 +54,7 @@
                         android:textSize="20dp" />
 
                     <TextView
-                        android:id="@+id/firstname"
+                        android:id="@+id/first_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
@@ -330,7 +330,7 @@
                     android:layout_marginRight="10dp">
 
                     <TextView
-                        android:id="@+id/EI"
+                        android:id="@+id/E"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="5dp"
@@ -340,7 +340,7 @@
                         android:textSize="20dp" />
 
                     <TextView
-                        android:id="@+id/ei"
+                        android:id="@+id/EI"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"

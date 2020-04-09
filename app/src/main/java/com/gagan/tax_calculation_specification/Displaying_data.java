@@ -10,7 +10,7 @@ import android.widget.TextView;
 public class Displaying_data extends AppCompatActivity {
     private TextView CPP;
     private TextView EI;
-    private TextView RRSP_CO;
+    private TextView CFRSSP;
     private TextView RRSP;
     private TextView TOTALTAXINCOME;
     private TextView ProvincialTAX;
@@ -21,11 +21,11 @@ public class Displaying_data extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_displaying_data);
 
-        CPP = findViewById(R.id.CPP);
+        CPP = findViewById(R.id.cp);
         EI = findViewById(R.id.EI);
-        RRSP = findViewById(R.id.RRSP);
-        RRSP_CO =findViewById(R.id.RRSP_co);
-        TOTALTAXINCOME = findViewById(R.id.TTI);
+        RRSP = findViewById(R.id.RP);
+       CFRSSP =findViewById(R.id.CRP);
+        TOTALTAXINCOME = findViewById(R.id.TI);
         ProvincialTAX = findViewById(R.id.PT);
         federalTAX = findViewById(R.id.FT);
         TotalTaxPayed = findViewById(R.id.TTPe);
@@ -46,13 +46,13 @@ public class Displaying_data extends AppCompatActivity {
         if(calculateMaxRrsp(gross) > contributedRrsp)
         {
             Double x = calculateMaxRrsp(gross) - contributedRrsp;
-           RRSP_CO.setText(contributedRrsp.toString());
+           CFRSSP.setText(contributedRrsp.toString());
 
         }else if(calculateMaxRrsp(gross) < contributedRrsp)
         {
             Double x = calculateMaxRrsp(gross) - contributedRrsp;
-           RRSP_CO.setText(x.toString());
-            RRSP_CO.setTextColor(Color.RED);
+            CFRSSP.setText(x.toString());
+            CFRSSP.setTextColor(Color.RED);
             RRSP.setText(contributedRrsp.toString());
 
         }
