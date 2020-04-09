@@ -125,8 +125,13 @@ public class person_entryscreen extends AppCompatActivity {
                 }else if (lastname.getText().toString().matches("")){
                     lastname.setError("enter Last name!");
 
-                }else if (Grosspay.getText().toString().matches("")){
-                    Grosspay.setError("enter Last name!");
+
+                }else if (Grosspay.getText().toString().matches("")) {
+
+                    Grosspay.setError("enter gross income!");
+
+                }else if ( Double.parseDouble(Grosspay.getText().toString()) <= 0){
+                    Grosspay.setError("gross income cannot be Zero");
 
                 }else if (RRSP.getText().toString().matches("")){
                     RRSP.setError("enter Last name!");
