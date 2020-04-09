@@ -19,8 +19,7 @@ public class Displaying_data extends AppCompatActivity {
     private TextView EI;
     private TextView CFRSSP;
     private TextView RRSP;
-    private TextView RRSP_CO;
-    private TextView TOTALTAXINCOME;
+    private TextView TOTALTAXABINCOME;
     private TextView ProvincialTAX;
     private TextView federalTAX;
     private TextView TotalTaxPayed;
@@ -38,9 +37,9 @@ public class Displaying_data extends AppCompatActivity {
         CPP = findViewById(R.id.cp);
         EI = findViewById(R.id.EI);
         RRSP = findViewById(R.id.RP);
-        RRSP_CO = findViewById(R.id.RRSP_co);
+
         CFRSSP =findViewById(R.id.CRP);
-        TOTALTAXINCOME = findViewById(R.id.TI);
+        TOTALTAXABINCOME = findViewById(R.id.TI);
         ProvincialTAX = findViewById(R.id.PT);
         federalTAX = findViewById(R.id.FT);
         TotalTaxPayed = findViewById(R.id.TTPe);
@@ -63,18 +62,19 @@ public class Displaying_data extends AppCompatActivity {
         if(calculateMaxRrsp(gross) >  RRSP_CO)
         {
             Double x = calculateMaxRrsp(gross) -  RRSP_CO;
-           CFRSSP.setText( RRSP_CO.toString());
+            CFRSSP.setText(String.format("%.2f",x));
+            RRSP.setText(String.format("%.2f",RRSP_CO));
 
-        }else if(calculateMaxRrsp(gross) <  RRSP_CO)
-        {
-            Double x = calculateMaxRrsp(gross) -  RRSP_CO;
-            CFRSSP.setText(x.toString());
+
+        }else if(calculateMaxRrsp(gross) <  RRSP_CO) {
+            Double x = calculateMaxRrsp(gross) - RRSP_CO;
+            CFRSSP.setText(String.format("%.2f", x));
             CFRSSP.setTextColor(Color.RED);
-            RRSP.setText( RRSP_CO.toString());
+            RRSP.setText(String.format("%.2f", RRSP_CO));
 
         }
 
-      TOTALTAXINCOME.setText( TOTALTAXINCOME.toString());
+      TOTALTAXABINCOME.setText(String.format("%.2f",TOTALTAXINCOME));
 
         if( TOTALTAXINCOME >= 220000){
             Double pt = TOTALTAXINCOME*0.1316;
