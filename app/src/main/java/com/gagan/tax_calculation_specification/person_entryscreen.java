@@ -120,8 +120,8 @@ public class person_entryscreen extends AppCompatActivity {
                 } else {
                     sinnumber.setText(sinnumber.getText().toString());
                     Intent mintent = new Intent(person_entryscreen.this, Displaying_data.class);
-                    CRACustomer C1 = new CRACustomer(taxdate.getText().toString(), sinnumber.getText().toString(), firstname.getText().toString(), lastname.getText().toString(), txtDate.getText().toString(), Age.getText().toString(), gender.getSelectedItem().toString(), GrossValue, RRSPvalue);
-                    mintent.putExtra("object", C1);
+                   // CRACustomer C1 = new CRACustomer(firstname.getText().toString(),lastname.getText().toString(),txtDate.getText().toString(),Age.getText().toString(),gender.getSelectedItem().toString(),sinnumber.getText().toString(),taxdate.getText().toString(),GrossValue,RRSPvalue);
+                   // mintent.putExtra("object",C1);
                     startActivity(mintent);
                 }
             }
