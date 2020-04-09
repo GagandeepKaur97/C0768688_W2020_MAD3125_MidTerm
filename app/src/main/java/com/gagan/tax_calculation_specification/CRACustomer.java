@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class CRACustomer  implements Parcelable {
     private String firstname;
     private String lastname;
-    private DatePicker Birthdate;
+    private String Birthdate;
     private int age;
     private ArrayList<String> gender;
     private int Sinnumber;
@@ -25,7 +25,7 @@ public class CRACustomer  implements Parcelable {
     private Double Totaltaxincome;
     private Double TotalTaxPayed;
 
-    public CRACustomer(String firstname, String lastname, DatePicker birthdate, int age, ArrayList<String> gender, int sinnumber, TextView taxdate, Double grosssincome, Double RRSP, Double federal,Double provincialtax, Double CPP, Double EI, Double CFRRSP, Double totaltaxincome, Double totalTaxPayed) {
+    public CRACustomer(String firstname, String lastname, String birthdate, int age, ArrayList<String> gender, int sinnumber, TextView taxdate, Double grosssincome, Double RRSP, Double federal,Double provincialtax, Double CPP, Double EI, Double CFRRSP, Double totaltaxincome, Double totalTaxPayed) {
         this.firstname = firstname;
         this.lastname = lastname;
 
@@ -99,11 +99,11 @@ public class CRACustomer  implements Parcelable {
         this.lastname = lastname;
     }
 
-    public DatePicker getBirthdate() {
+    public String getBirthdate() {
         return Birthdate;
     }
 
-    public void setBirthdate(DatePicker birthdate) {
+    public void setBirthdate(String birthdate) {
         Birthdate = birthdate;
     }
 
