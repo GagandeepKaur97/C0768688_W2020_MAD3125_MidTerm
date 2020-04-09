@@ -202,6 +202,7 @@
                         android:layout_marginLeft="5dp"
                         android:layout_weight="1"
                         android:textAlignment="center"
+                        android:textSize="13dp"
                         android:textColor="@color/design_default_color_on_secondary"/>
                 </TableRow>
 
