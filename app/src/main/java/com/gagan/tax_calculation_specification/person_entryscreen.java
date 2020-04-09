@@ -142,21 +142,25 @@ public class person_entryscreen extends AppCompatActivity {
                 }
             }
         });
-            }
 
-  //   Clear.setOnClickListener(new View.OnClickListener() {
-  //         @Override
- //           public void onClick(View v) {
-//
-//                firstname.setText("");
-//                lastname.setText("");
-//
-//
-//
-//            }
-//        });
-//    }
 
+  Clear.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+
+            firstname.setText("");
+            lastname.setText("");
+            sinnumber.setText("");
+            txtDate.setText("");
+           Grosspay.setText("");
+            RRSP.setText("");
+            Age.setText("Age");
+
+        }
+  });
+
+
+    }
 
 
     int calculateAge ( long date){
