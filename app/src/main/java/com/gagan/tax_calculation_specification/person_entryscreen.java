@@ -60,7 +60,7 @@ public class person_entryscreen extends AppCompatActivity {
         Calendar calendar = Calendar.getInstance();
         SimpleDateFormat simpledateformat = new SimpleDateFormat(" EEEE ,dd-mm-yyyy hh:mm:ss a");
         String dateTime = simpledateformat.format(calendar.getTime());
-        taxdate.setText("Tax Filing Date: " + dateTime);
+        taxdate.setText("Date: " + dateTime);
         taxdate.setTextColor(Color.BLACK);
 
         final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
