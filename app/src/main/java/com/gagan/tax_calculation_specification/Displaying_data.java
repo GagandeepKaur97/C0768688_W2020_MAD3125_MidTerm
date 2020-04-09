@@ -19,6 +19,7 @@ public class Displaying_data extends AppCompatActivity {
     private TextView EI;
     private TextView CFRSSP;
     private TextView RRSP;
+    private TextView RRSP_CO;
     private TextView TOTALTAXINCOME;
     private TextView ProvincialTAX;
     private TextView federalTAX;
@@ -37,6 +38,7 @@ public class Displaying_data extends AppCompatActivity {
         CPP = findViewById(R.id.cp);
         EI = findViewById(R.id.EI);
         RRSP = findViewById(R.id.RP);
+        RRSP_CO = findViewById(R.id.RRSP_co);
         CFRSSP =findViewById(R.id.CRP);
         TOTALTAXINCOME = findViewById(R.id.TI);
         ProvincialTAX = findViewById(R.id.PT);
@@ -50,67 +52,69 @@ public class Displaying_data extends AppCompatActivity {
         CRACustomer C2 = (CRACustomer) extras.getParcelable("object");
 
         Double gross = C2.getGrossIncome();
-        Double contributedRrsp = C2.getRRSP();
-        Double TotalTaxableIncome = (gross-(calcualtecpp(gross)+calculateEi(gross)+calculateMaxRrsp(gross)));
+        Double RRSP_CO = C2.getRRSP();
+        Double  TOTALTAXINCOME = (gross-(calcualteCPP(gross)+calculateEI(gross)+calculateMaxRrsp(gross)));
 
-       CPP.setText(calcualtecpp(gross).toString());
-       EI.setText(calculateEi(gross).toString());
 
-        if(calculateMaxRrsp(gross) > contributedRrsp)
+        CPP.setText(String.format("%.2f", calcualteCPP(gross)));
+        EI.setText(String.format("%.2f",calculateEI(gross)));
+
+
+        if(calculateMaxRrsp(gross) >  RRSP_CO)
         {
-            Double x = calculateMaxRrsp(gross) - contributedRrsp;
-           CFRSSP.setText(contributedRrsp.toString());
+            Double x = calculateMaxRrsp(gross) -  RRSP_CO;
+           CFRSSP.setText( RRSP_CO.toString());
 
-        }else if(calculateMaxRrsp(gross) < contributedRrsp)
+        }else if(calculateMaxRrsp(gross) <  RRSP_CO)
         {
-            Double x = calculateMaxRrsp(gross) - contributedRrsp;
+            Double x = calculateMaxRrsp(gross) -  RRSP_CO;
             CFRSSP.setText(x.toString());
             CFRSSP.setTextColor(Color.RED);
-            RRSP.setText(contributedRrsp.toString());
+            RRSP.setText( RRSP_CO.toString());
 
         }
 
-      TOTALTAXINCOME.setText(TotalTaxableIncome.toString());
+      TOTALTAXINCOME.setText( TOTALTAXINCOME.toString());
 
-        if(TotalTaxableIncome >= 220000){
-            Double pt = TotalTaxableIncome*0.1316;
+        if( TOTALTAXINCOME >= 220000){
+            Double pt = TOTALTAXINCOME*0.1316;
             ProvincialTAX.setText(pt.toString());
 
-        }else if ((TotalTaxableIncome >= 150000) &&(TotalTaxableIncome <= 220000)){
-            Double pt = TotalTaxableIncome*0.1216;
+        }else if (( TOTALTAXINCOME >= 150000) &&( TOTALTAXINCOME <= 220000)){
+            Double pt =  TOTALTAXINCOME*0.1216;
             ProvincialTAX.setText(pt.toString());
-        }else if ((TotalTaxableIncome >= 87813.01) &&(TotalTaxableIncome <= 150000)){
-            Double pt = TotalTaxableIncome*0.1116;
+        }else if (( TOTALTAXINCOME >= 87813.01) &&( TOTALTAXINCOME <= 150000)){
+            Double pt =  TOTALTAXINCOME*0.1116;
             ProvincialTAX.setText(pt.toString());
-        }else if ((TotalTaxableIncome >= 43906.01) &&(TotalTaxableIncome <= 87813)){
-            Double pt = TotalTaxableIncome*0.0915;
+        }else if (( TOTALTAXINCOME >= 43906.01) &&( TOTALTAXINCOME <= 87813)){
+            Double pt =  TOTALTAXINCOME*0.0915;
             ProvincialTAX.setText(pt.toString());
-        }else if ((TotalTaxableIncome >= 10582.01) &&(TotalTaxableIncome <= 43906)){
-            Double pt = TotalTaxableIncome*0.0505;
+        }else if (( TOTALTAXINCOME >= 10582.01) &&( TOTALTAXINCOME <= 43906)){
+            Double pt =  TOTALTAXINCOME*0.0505;
             ProvincialTAX.setText(pt.toString());
-        }else if (TotalTaxableIncome <= 10582){
-            Double pt = TotalTaxableIncome;
+        }else if ( TOTALTAXINCOME <= 10582){
+            Double pt =  TOTALTAXINCOME;
             ProvincialTAX.setText(pt.toString());
         }
 
 
-        if(TotalTaxableIncome >= 210371.01){
-            Double pt = TotalTaxableIncome*0.33;
+        if( TOTALTAXINCOME >= 210371.01){
+            Double pt =  TOTALTAXINCOME*0.33;
             federalTAX.setText(pt.toString());
-        }else if ((TotalTaxableIncome >= 147667.01) &&(TotalTaxableIncome <= 210371)){
-            Double pt = TotalTaxableIncome*0.29;
+        }else if (( TOTALTAXINCOME >= 147667.01) &&( TOTALTAXINCOME <= 210371)){
+            Double pt =  TOTALTAXINCOME*0.29;
             federalTAX.setText(pt.toString());
-        }else if ((TotalTaxableIncome >= 95259.01) &&(TotalTaxableIncome <= 147667)){
-            Double pt = TotalTaxableIncome*0.26;
+        }else if (( TOTALTAXINCOME >= 95259.01) &&( TOTALTAXINCOME <= 147667)){
+            Double pt =  TOTALTAXINCOME*0.26;
             federalTAX.setText(pt.toString());
-        }else if ((TotalTaxableIncome >= 47630.01) &&(TotalTaxableIncome <= 95259)){
-            Double pt = TotalTaxableIncome*0.2050;
+        }else if (( TOTALTAXINCOME >= 47630.01) &&( TOTALTAXINCOME <= 95259)){
+            Double pt =  TOTALTAXINCOME*0.2050;
             federalTAX.setText(pt.toString());
-        }else if ((TotalTaxableIncome >= 12609.01) &&(TotalTaxableIncome <= 47630)){
-            Double pt = TotalTaxableIncome*0.15;
+        }else if (( TOTALTAXINCOME >= 12609.01) &&( TOTALTAXINCOME <= 47630)){
+            Double pt =  TOTALTAXINCOME*0.15;
             federalTAX.setText(pt.toString());
-        }else if (TotalTaxableIncome <= 12069){
-            Double pt = TotalTaxableIncome;
+        }else if ( TOTALTAXINCOME <= 12069){
+            Double pt =  TOTALTAXINCOME;
             federalTAX.setText(pt.toString());
         }
 
@@ -135,7 +139,7 @@ public class Displaying_data extends AppCompatActivity {
     }
 
 
-    private Double calcualtecpp(Double gross)
+    private Double calcualteCPP(Double gross)
     {
         Double x;
         Double y;
@@ -154,7 +158,7 @@ public class Displaying_data extends AppCompatActivity {
         return x;
 
     }
-    private Double calculateEi(Double gross){
+    private Double calculateEI(Double gross){
         Double x;
 
         if(gross >= 53100){
