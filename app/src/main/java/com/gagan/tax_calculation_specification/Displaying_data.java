@@ -55,26 +55,26 @@ public class Displaying_data extends AppCompatActivity {
         Double  TOTALTAXINCOME = (gross-(calcualteCPP(gross)+calculateEI(gross)+calculateMaxRrsp(gross)));
 
 
-        CPP.setText(String.format("%.2f", calcualteCPP(gross)));
-        EI.setText(String.format("%.2f",calculateEI(gross)));
+        CPP.setText(String.format("$%.2f", calcualteCPP(gross)));
+        EI.setText(String.format("$%.2f",calculateEI(gross)));
 
 
         if(calculateMaxRrsp(gross) >  RRSP_CO)
         {
             Double x = calculateMaxRrsp(gross) -  RRSP_CO;
-            CFRSSP.setText(String.format("%.2f",x));
-            RRSP.setText(String.format("%.2f",RRSP_CO));
+            CFRSSP.setText(String.format("$%.2f",x));
+            RRSP.setText(String.format("$%.2f",RRSP_CO));
 
 
         }else if(calculateMaxRrsp(gross) <  RRSP_CO) {
             Double x = calculateMaxRrsp(gross) - RRSP_CO;
-            CFRSSP.setText(String.format("%.2f", x));
+            CFRSSP.setText(String.format("$%.2f", x));
             CFRSSP.setTextColor(Color.RED);
-            RRSP.setText(String.format("%.2f", RRSP_CO));
+            RRSP.setText(String.format("$%.2f", RRSP_CO));
 
         }
 
-      TOTALTAXABINCOME.setText(String.format("%.2f",TOTALTAXINCOME));
+      TOTALTAXABINCOME.setText(String.format("$%.2f",TOTALTAXINCOME));
 
         if( TOTALTAXINCOME >= 220000){
             Double pt = TOTALTAXINCOME*0.1316;
@@ -124,7 +124,10 @@ public class Displaying_data extends AppCompatActivity {
         Double Finalfederal=Double.parseDouble(value2);
 
         Double x = Finalprovincial + Finalfederal;
-        TotalTaxPayed.setText(x.toString());
+        TotalTaxPayed.setText("$"+x.toString());
+
+        ProvincialTAX.setText("$"+value1);
+        federalTAX.setText("$"+value2);
 
         sinnumber.setText(C2.getSinNo());
         fullname.setText(C2.getLastName().toUpperCase()+" "+C2.getFirstName());
@@ -132,7 +135,8 @@ public class Displaying_data extends AppCompatActivity {
         Gender.setText(C2.getGender());
         Age.setText(C2.getAge());
         Date.setText(C2.getCurrentDate());
-        Grossincome.setText(C2.getGrossIncome().toString());
+
+        Grossincome.setText("$"+C2.getGrossIncome().toString());
 
 
 
