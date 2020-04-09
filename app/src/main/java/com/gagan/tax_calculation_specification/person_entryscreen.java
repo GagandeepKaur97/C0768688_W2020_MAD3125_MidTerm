@@ -59,9 +59,12 @@ public class person_entryscreen extends AppCompatActivity {
         Clear = findViewById(R.id.btnClear);
 
         final Calendar myCalendar = Calendar.getInstance();
+
         Calendar calendar = Calendar.getInstance();
         SimpleDateFormat simpledateformat = new SimpleDateFormat(" EEEE ,dd-mm-yyyy hh:mm:ss a");
         String dateTime = simpledateformat.format(calendar.getTime());
+
+
         taxdate.setText( dateTime);
         taxdate.setTextColor(Color.BLACK);
 

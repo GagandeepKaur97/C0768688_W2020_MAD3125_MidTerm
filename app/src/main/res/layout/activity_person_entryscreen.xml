@@ -124,7 +124,10 @@
                             android:layout_height="match_parent"
                             android:gravity="left"
                             android:hint=" Click To Enter BirthDate"
-                            android:textAlignment="center"></com.google.android.material.textview.MaterialTextView>
+                            android:textAlignment="center"
+                            tools:ignore="RtlCompat">
+
+                        </com.google.android.material.textview.MaterialTextView>
 
                     </com.google.android.material.textfield.TextInputLayout>
                 </TableRow>
