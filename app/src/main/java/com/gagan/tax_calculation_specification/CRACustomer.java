@@ -14,7 +14,7 @@ public class CRACustomer  implements Parcelable {
     private int age;
     private ArrayList<String> gender;
     private int Sinnumber;
-    private TextView taxdate;
+    private String taxdate;
     private Double Grosssincome;
     private Double RRSP;
     private Double federal;
@@ -25,14 +25,13 @@ public class CRACustomer  implements Parcelable {
     private Double Totaltaxincome;
     private Double TotalTaxPayed;
 
-    public CRACustomer(String firstname, String lastname, String birthdate, int age, ArrayList<String> gender, int sinnumber, TextView taxdate, Double grosssincome, Double RRSP, Double federal,Double provincialtax, Double CPP, Double EI, Double CFRRSP, Double totaltaxincome, Double totalTaxPayed) {
+    public CRACustomer(String firstname, String lastname, String birthdate, int age, ArrayList<String> gender, int sinnumber, String taxdate, Double grosssincome, Double RRSP, Double federal,Double provincialtax, Double CPP, Double EI, Double CFRRSP, Double totaltaxincome, Double totalTaxPayed) {
         this.firstname = firstname;
         this.lastname = lastname;
-
         this. Birthdate = birthdate;
         this.age = age;
         this.gender = gender;
-       this. Sinnumber = sinnumber;
+        this. Sinnumber = sinnumber;
         this.taxdate = taxdate;
         this.Grosssincome = grosssincome;
         this.RRSP = RRSP;
@@ -50,10 +49,12 @@ public class CRACustomer  implements Parcelable {
     protected CRACustomer(Parcel in) {
         firstname = in.readString();
         lastname = in.readString();
-
+        Birthdate=in.readString();
         age =in.readInt();
         gender =in.createStringArrayList();
         Sinnumber = in.readInt();
+        taxdate = in.readString();
+
 
 
 
@@ -131,11 +132,11 @@ public class CRACustomer  implements Parcelable {
         Sinnumber = sinnumber;
     }
 
-    public TextView getTaxdate() {
+    public String getTaxdate() {
         return taxdate;
     }
 
-    public void setTaxdate(TextView taxdate) {
+    public void setTaxdate(String taxdate) {
         this.taxdate = taxdate;
     }
 
