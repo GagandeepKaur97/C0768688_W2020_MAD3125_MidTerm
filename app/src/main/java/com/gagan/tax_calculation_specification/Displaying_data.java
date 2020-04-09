@@ -8,6 +8,13 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 public class Displaying_data extends AppCompatActivity {
+    private TextView sinnumber;
+    private TextView fullname;
+    private TextView Birthdate;
+    private TextView Age;
+    private TextView Date;
+    private TextView Grossincome;
+    private TextView Gender;
     private TextView CPP;
     private TextView EI;
     private TextView CFRSSP;
@@ -20,11 +27,17 @@ public class Displaying_data extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_displaying_data);
-
+        sinnumber = findViewById(R.id.SN);
+        fullname = findViewById(R.id.full_name);
+        Birthdate = findViewById(R.id.BD);
+        Age = findViewById(R.id.age);
+        Date = findViewById(R.id.CD);
+        Grossincome = findViewById(R.id.GI);
+        Gender = findViewById(R.id.G);
         CPP = findViewById(R.id.cp);
         EI = findViewById(R.id.EI);
         RRSP = findViewById(R.id.RP);
-       CFRSSP =findViewById(R.id.CRP);
+        CFRSSP =findViewById(R.id.CRP);
         TOTALTAXINCOME = findViewById(R.id.TI);
         ProvincialTAX = findViewById(R.id.PT);
         federalTAX = findViewById(R.id.FT);
