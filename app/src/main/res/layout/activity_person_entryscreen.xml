@@ -158,6 +158,7 @@
                         android:id="@+id/sinNumber"
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
+                        android:inputType="number"
                         android:hint="sin number">
                     </com.google.android.material.textfield.TextInputEditText>
 
@@ -200,11 +201,13 @@
                         tools:layout_editor_absoluteY="80dp">
 
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/Grossincome"
-                        android:layout_height="match_parent"
-                        android:layout_width="match_parent"
-                        android:hint="Gross income "/>
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/Grossincome"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:drawableLeft="@mipmap/ic_dollarsymbol"
+                            android:hint="Gross income "
+                            android:inputType="numberDecimal" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                 </TableRow>
@@ -225,6 +228,7 @@
                         android:id="@+id/RRSP"
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
+                        android:inputType="numberDecimal"
                         android:hint="RRSP">
                     </com.google.android.material.textfield.TextInputEditText>
 
