@@ -75,6 +75,8 @@ public class person_entryscreen extends AppCompatActivity {
                 SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
 
                 txtDate.setText(sdf.format(myCalendar.getTime()));
+                txtDate.setTextColor(Color.BLACK);
+                txtDate.setTypeface(null,Typeface.BOLD);
                 if (calculateAge(myCalendar.getTimeInMillis()) > 18) {
                     Age.setText("Age: " + Integer.toString(calculateAge(myCalendar.getTimeInMillis())));
                     Age.setTextColor(Color.BLACK);
