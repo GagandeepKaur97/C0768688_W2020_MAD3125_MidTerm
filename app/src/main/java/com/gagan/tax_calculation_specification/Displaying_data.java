@@ -114,6 +114,21 @@ public class Displaying_data extends AppCompatActivity {
             federalTAX.setText(pt.toString());
         }
 
+        String value1= ProvincialTAX.getText().toString();
+        Double Finalprovincial=Double.parseDouble(value1);
+        String value2= federalTAX.getText().toString();
+        Double Finalfederal=Double.parseDouble(value2);
+
+        Double x = Finalprovincial + Finalfederal;
+        TotalTaxPayed.setText(x.toString());
+
+        sinnumber.setText(C2.getSinNo());
+        fullname.setText(C2.getLastName().toUpperCase()+" "+C2.getFirstName());
+        Birthdate.setText(C2.getBirthdate());
+        Gender.setText(C2.getGender());
+        Age.setText(C2.getAge());
+        Date.setText(C2.getCurrentDate());
+        Grossincome.setText(C2.getGrossIncome().toString());
 
 
 
